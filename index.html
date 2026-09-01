@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Network | Ana Sayfa</title>
+    <style>
+        :root {
+            --bg-dark: #080b12;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #1f293d;
+        }
+
+        /* --- ANİMASYON KODLARI --- */
+        @keyframes soft-rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes text-rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ÜST KISIM (HEADER) - ORTADAKİ TEMAYLA UYUMLU CAM EFEKTİ (GLASSMORPHISM) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            /* Yarı şeffaf koyu zemin ve arkadaki renkleri buğulandıran cam efekti */
+            background: rgba(13, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* LAPEX NETWORK LOGOSU - TAM EKRAN ORTASINDA */
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            
+            /* Tam ekran ortalaması */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            /* Rengârenk canlı yazı rengi */
+            background: linear-gradient(-45deg, #ff007f, #7f00ff, #00d2ff, #00ff87);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-rainbow 6s ease infinite;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00d2ff;
+        }
+
+        /* ORTA ARKA PLAN (HERO) - GÖZ BATMAYAN RENGÂRENK ANİMASYONLU */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            
+            background: linear-gradient(-45deg, #0d1b2a, #1b263b, #2b1e3a, #1a2536, #0f2027);
+            background-size: 400% 400%;
+            animation: soft-rainbow 12s ease infinite;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(-45deg, #ff007f, #00d2ff, #00ff87);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: text-rainbow 6s ease infinite;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #b0b8c4;
+            max-width: 600px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* IP KUTUSU */
+        .ip-box {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #00d2ff;
+            cursor: pointer;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .ip-box:hover {
+            transform: scale(1.04);
+            border-color: #00d2ff;
+        }
+
+        /* BUTONLAR */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            background: linear-gradient(90deg, #7f00ff, #00d2ff);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-main);
+            box-shadow: none;
+        }
+        .btn-secondary:hover {
+            border-color: #00d2ff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ALT KISIM (FOOTER) */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: var(--bg-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">AURA NETWORK</div>
+        <nav>
+            <a href="#">Ana Sayfa</a>
+            <a href="#">Lapex Client</a>
+            <a href="#">Mağaza</a>
+            <a href="#">Kurallar</a>
+            <a href="#">Destek</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>ADİL VE GÜVENLİ <span>PVP DENEYİMİ</span></h1>
+        <p>1.8.9 sürümüne özel olarak optimize edilmiş altyapımız, gelişmiş hile koruması ve akıcı performansıyla savaş alanında yerini al.</p>
+        
+        <div class="ip-box" onclick="kopyalaIP()" title="Kopyalamak için tıkla">
+            play.auranetwork.com
+        </div>
+
+        <div class="btn-group">
+            <a href="#" class="btn">Client İndir</a>
+            <a href="#" class="btn btn-secondary">Discord'a Katıl</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Aura Network. Tüm hakları saklıdır. | Cerrah & Lapex Altyapısı.
+    </footer>
+
+    <script>
+        function kopyalaIP() {
+            navigator.clipboard.writeText("play.auranetwork.com");
+            alert("Sunucu IP adresi kopyalandı, darling! 🖤");
+        }
+    </script>
+</body>
+</html>
