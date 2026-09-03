@@ -35,13 +35,12 @@
             flex-direction: column;
         }
 
-        /* ÜST KISIM (HEADER) - ORTADAKİ TEMAYLA UYUMLU CAM EFEKTİ (GLASSMORPHISM) */
+        /* ÜST KISIM (HEADER) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            /* Yarı şeffaf koyu zemin ve arkadaki renkleri buğulandıran cam efekti */
             background: rgba(13, 23, 42, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -50,18 +49,14 @@
             z-index: 10;
         }
 
-        /* LAPEX NETWORK LOGOSU - TAM EKRAN ORTASINDA */
+        /* LOGO */
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: 3px;
-            
-            /* Tam ekran ortalaması */
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            
-            /* Rengârenk canlı yazı rengi */
             background: linear-gradient(-45deg, #ff007f, #7f00ff, #00d2ff, #00ff87);
             background-size: 300% 300%;
             -webkit-background-clip: text;
@@ -84,7 +79,7 @@
             color: #00d2ff;
         }
 
-        /* ORTA ARKA PLAN (HERO) - GÖZ BATMAYAN RENGÂRENK ANİMASYONLU */
+        /* ORTA ARKA PLAN (HERO) */
         .hero {
             flex: 1;
             display: flex;
@@ -93,7 +88,6 @@
             align-items: center;
             text-align: center;
             padding: 60px 20px;
-            
             background: linear-gradient(-45deg, #0d1b2a, #1b263b, #2b1e3a, #1a2536, #0f2027);
             background-size: 400% 400%;
             animation: soft-rainbow 12s ease infinite;
@@ -205,7 +199,8 @@
         </div>
 
         <div class="btn-group">
-            <a href="#" class="btn">Client İndir</a>
+            <!-- GITHUB RELEASE INDIRME LINKI -->
+            <a href="https://github.com/KULLANICI_ADI/AuraLauncher/releases/download/v1.0.0/AuraLauncher.zip" class="btn">Client İndir</a>
             <a href="#" class="btn btn-secondary">Discord'a Katıl</a>
         </div>
     </div>
